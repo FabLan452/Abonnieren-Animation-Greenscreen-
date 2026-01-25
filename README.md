@@ -5,3 +5,4 @@ Erstelle einfach einen Folder und dann gib in ihn main.lua und conf.lua.
 Nachdem erstelle einen Ordner namens assets und gib darin die Dateien in dem assets branch von Github.
 Wie oben schon erwähnt kannst du einfach die Assets ändern aber achte darauf das bei den dateien Abonnieren, Abonniert und geliked, Der Abo knopf und Like knopf an der selben Stelle ist.
 Und dass es die gleiche resolution haben sollte wie das Original!
+Und um das dann zu starten ziehe den Folder auf Love.exe
