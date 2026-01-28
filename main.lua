@@ -4,6 +4,11 @@ function love.load()
     Abonniert = love.graphics.newImage("assets/Abonniert.png")
     geliked = love.graphics.newImage("assets/geliked.png")
     Maus = love.graphics.newImage("assets/Maus.png")
+    Klick = love.audio.newSource("assets/Klick.mp3", "static")
+end
+function playKlick()
+    local sfx = Klick:clone()
+    sfx:play()
 end
 local Maust = {
     x = 1460,
@@ -31,6 +36,7 @@ function love.update(dt)
     elseif Maust.Frames1 <= 0 and not Frame1 then
         Abonnieren = Abonniert
         Frame1 = true
+        playKlick()
 end
 if Frame1 == true and Maust.Framesy2 > 0 then
     Maust.y = Maust.y + 2
@@ -39,9 +45,10 @@ elseif Frame1 == true and Maust.Framesx2 > 0 then
     Maust.x = Maust.x - 2
     Maust.Framesx2 = Maust.Framesx2 - 2
 end
-if Maust.Framesx2 <= 0 and Maust.Framesy2 <= 0 then
+if Maust.Framesx2 <= 0 and Maust.Framesy2 <= 0 and not Frame2 then
     Frame2 = true
     Abonnieren = geliked
+    playKlick()
 end
 if Frame2 == true then
 Maust.y = Maust.y + 3
